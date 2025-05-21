@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Skill Challenge - Start</title>
+    <link rel="icon" href="oracle-favicon.ico" type="image/x-icon"> <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oracle+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="question.css"> </head>
+<body>
+
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="header-content">
+                <img src="oracle-logo.png" alt="Oracle Logo" class="oracle-logo">
+                <h1>Skill Challenge</h1>
+                </div>
+        </header>
+
+        <main class="app-main">
+            <section id="start-section" class="card start-section">
+                <h2 class="card-title">Begin Your Assessment</h2>
+                <p class="card-subtitle">Please provide your details and choose a module to start the quiz.</p>
+                <form id="candidate-form" class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="E.g., John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="E.g., john.doe@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="module-select">Select Quiz Module</label>
+                        <select id="module-select" required>
+                            <option value="">Choose a module</option>
+                            <option value="html">HTML Fundamentals</option>
+                            <option value="css">CSS Styling</option>
+                            <option value="javascript">JavaScript Core</option>
+                        </select>
+                    </div>
+                    <div class="form-group file-upload-container">
+                        <label for="resume" class="file-upload-label">Upload Resume (Optional)</label>
+                        <input type="file" id="resume" accept=".pdf,.doc,.docx" class="file-upload-input">
+                        <span id="file-name-display" class="file-name-display">No file chosen</span>
+                    </div>
+                    <button type="submit" id="start-test-btn" class="btn btn-primary btn-full-width">Start Challenge</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 Oracle Skill Challenge. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

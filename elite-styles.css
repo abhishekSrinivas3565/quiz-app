@@ -1,0 +1,203 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #eef2f6; /* Lighter background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    background-color: #2c3e50; /* Darker, professional blue/grey */
+    color: white;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keeps header visible on scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background-color: #e74c3c; /* Red for danger/logout */
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* Main Dashboard Content Area */
+.dashboard-main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1400px; /* Max width for content */
+    margin: 2rem auto; /* Center content */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Spacing between sections */
+}
+
+/* Info Cards Container (for Location & Camera) */
+.info-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 2rem;
+}
+
+.info-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.info-card h2 {
+    color: #34495e; /* Darker blue-grey for headings */
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.info-card p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Camera Specific Styles */
+.camera-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center camera feed */
+}
+
+.camera-feed {
+    width: 100%; /* Make video take full width of its card */
+    max-width: 320px; /* Maintain aspect ratio */
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 1rem;
+    background-color: #000; /* Black background for video placeholder */
+}
+
+.status-message {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.5rem;
+}
+
+/* Candidate Details Table Section */
+.candidate-details-section h2 {
+    color: #34495e;
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.table-container {
+    overflow-x: auto; /* Enable horizontal scrolling on small screens */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+#candidateTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Remove top margin as container handles it */
+}
+
+#candidateTable thead th {
+    background-color: #3498db; /* A vibrant blue for table header */
+    color: white;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+#candidateTable tbody td {
+    padding: 1rem;
+    border-bottom: 1px solid #ecf0f1; /* Lighter border */
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+#candidateTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#candidateTable tbody tr:nth-child(even) {
+    background-color: #f8fbfd; /* Very light blue for even rows */
+}
+
+#candidateTable tbody tr:hover {
+    background-color: #eaf2f8; /* Light hover effect */
+    cursor: default;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .info-cards-container {
+        grid-template-columns: 1fr; /* Stack cards on small screens */
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .info-card h2 {
+        font-size: 1.3rem;
+    }
+
+    #candidateTable thead th,
+    #candidateTable tbody td {
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+}

@@ -1,0 +1,462 @@
+/* --- Oracle-Inspired Color Palette --- */
+:root {
+    --oracle-blue: #0076a8; /* Main brand blue */
+    --oracle-dark-blue: #005680;
+    --oracle-grey: #666;
+    --oracle-light-grey: #f0f0f0;
+    --oracle-border: #d0d0d0;
+    --text-dark: #333;
+    --text-light: #fff;
+    --success-green: #28a745;
+    --warning-yellow: #ffc107;
+    --error-red: #dc3545;
+}
+
+/* --- General Body & App Container --- */
+body {
+    font-family: 'Oracle Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--oracle-light-grey);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for scrolling if content is long */
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-sizing: border-box;
+}
+
+.app-wrapper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Wider for more professional feel */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 60px); /* Fill screen height minus padding */
+}
+
+/* --- Header --- */
+.app-header {
+    background-color: var(--oracle-dark-blue);
+    color: var(--text-light);
+    padding: 20px 30px;
+    border-bottom: 1px solid var(--oracle-blue);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 740px; /* Constrain content width */
+    margin: 0 auto;
+}
+
+.oracle-logo {
+    height: 35px; /* Adjust as needed for your logo */
+    margin-right: 15px;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+.timer-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--warning-yellow); /* Yellow for timer */
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- Main Content Area --- */
+.app-main {
+    flex-grow: 1; /* Allows main content to fill remaining height */
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center cards horizontally */
+}
+
+/* --- Card Styles --- */
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--oracle-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px; /* Card specific max-width */
+    margin-bottom: 20px; /* Space between cards if multiple were visible */
+    box-sizing: border-box;
+}
+
+.card-title {
+    font-size: 1.6rem;
+    color: var(--oracle-blue);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-subtitle {
+    font-size: 1rem;
+    color: var(--oracle-grey);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* --- Form Styles --- */
+.form-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Single column layout by default */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: var(--oracle-grey);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    padding: 12px;
+    border: 1px solid var(--oracle-border);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--oracle-blue);
+    box-shadow: 0 0 0 2px rgba(0, 118, 168, 0.2);
+    outline: none;
+}
+
+/* File Upload Styles */
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-upload-label {
+    border: 1px solid var(--oracle-border);
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--oracle-light-grey);
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: background-color 0.2s ease;
+}
+
+.file-upload-label:hover {
+    background-color: #e5e5e5;
+}
+
+.file-name-display {
+    font-size: 0.9rem;
+    color: var(--oracle-grey);
+    margin-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+}
+
+
+/* --- Buttons --- */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+    text-decoration: none; /* For potential links */
+}
+
+.btn-primary {
+    background-color: var(--oracle-blue);
+    color: var(--text-light);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--oracle-dark-blue);
+    box-shadow: 0 2px 8px rgba(0, 118, 168, 0.3);
+}
+
+.btn-secondary {
+    background-color: var(--oracle-grey);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: #555;
+    box-shadow: 0 2px 8px rgba(102, 102, 102, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--oracle-blue);
+    border: 1px solid var(--oracle-blue);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--oracle-blue);
+    color: var(--text-light);
+    box-shadow: 0 2px 8px rgba(0, 118, 168, 0.3);
+}
+
+.btn-full-width {
+    width: 100%;
+}
+
+.btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* --- Quiz Container Specific --- */
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.progress-info {
+    margin-bottom: 25px;
+}
+
+.progress-text {
+    font-size: 0.95rem;
+    color: var(--oracle-grey);
+    text-align: right;
+    margin-bottom: 5px;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--oracle-light-grey);
+    border-radius: 5px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%; /* Controlled by JS */
+    height: 100%;
+    background-color: var(--success-green); /* Green for progress */
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+.question-text {
+    font-size: 1.35rem;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    text-align: left;
+    line-height: 1.5;
+    font-weight: 600;
+}
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.options-list li {
+    background-color: #fcfcfc;
+    border: 1px solid var(--oracle-border);
+    border-radius: 4px;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.options-list li:hover {
+    background-color: var(--oracle-light-grey);
+    border-color: var(--oracle-blue);
+}
+
+.options-list li.selected {
+    background-color: #e6f7ff; /* Lighter blue for selected */
+    border-color: var(--oracle-blue);
+    color: var(--oracle-dark-blue);
+    font-weight: 600;
+    box-shadow: 0 1px 5px rgba(0, 118, 168, 0.15);
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* --- Loading Section --- */
+.loading-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.loading-section .card-title {
+    color: var(--oracle-blue);
+    margin-bottom: 20px;
+}
+
+.spinner {
+    border: 5px solid rgba(0, 118, 168, 0.2); /* Light blue */
+    border-top: 5px solid var(--oracle-blue);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Result Container --- */
+.result-container {
+    text-align: center;
+}
+
+.result-container .card-title {
+    color: var(--oracle-blue);
+    margin-bottom: 30px;
+}
+
+.result-summary {
+    background-color: #f7fcfc; /* Very light blue/green */
+    border: 1px solid #d9edf7;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.result-summary h3 {
+    color: var(--oracle-dark-blue);
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.result-summary p,
+.result-summary ul {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.result-summary ul li {
+    margin-bottom: 5px;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+/* --- Footer --- */
+.app-footer {
+    background-color: var(--oracle-dark-blue);
+    color: rgba(255, 255, 255, 0.8);
+    padding: 15px 30px;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top: 1px solid var(--oracle-blue);
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .app-wrapper {
+        min-height: calc(100vh - 30px);
+    }
+    .app-header {
+        padding: 15px 20px;
+    }
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .oracle-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .app-header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .timer-display {
+        font-size: 1.3rem;
+    }
+    .app-main {
+        padding: 20px;
+    }
+    .card {
+        padding: 20px;
+    }
+    .card-title {
+        font-size: 1.4rem;
+    }
+    .question-text {
+        font-size: 1.2rem;
+    }
+    .options-list li {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .result-summary h3 {
+        font-size: 1.1rem;
+    }
+    .result-summary p, .result-summary ul li {
+        font-size: 1rem;
+    }
+    .result-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oracle Skill Challenge - Quiz</title>
+    <link rel="icon" href="oracle-favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oracle+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" href="question.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="header-content">
+                <img src="oracle-logo.png" alt="Oracle Logo" class="oracle-logo">
+                <h1>Skill Challenge</h1>
+                <div id="timer" class="timer-display">00:00</div> </div>
+        </header>
+
+        <main class="app-main">
+            <section id="quiz-container" class="card quiz-container">
+                <div class="progress-info">
+                    <div id="progress" class="progress-text">Question <span id="current"></span> of <span id="total"></span></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="question-text" class="question-text"></h2>
+                <form id="quiz-form" class="quiz-form">
+                    <ul id="options-list" class="options-list">
+                        </ul>
+                    <div class="navigation-buttons">
+                        <button type="submit" id="next-btn" class="btn btn-secondary" disabled>Next Question</button>
+                    </div>
+                </form>
+                
+           <section id="loading-next" class="card loading-section hidden">
+                <h2 class="card-title">Preparing Next Module...</h2>
+                <div class="spinner"></div>
+                <p class="card-subtitle">Please wait while we load the next set of questions.</p>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>&copy; 2025 Oracle Skill Challenge. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="question.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

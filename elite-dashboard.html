@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Dashboard</title>
+    <link rel="stylesheet" href="elite-styles.css">
+</head>
+<body>
+
+    <script>
+        const role = localStorage.getItem('role');
+        if (role !== 'elite') {
+            alert("Access denied! You must be logged in as an Elite user.");
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <header class="dashboard-header">
+        <h1>Elite Dashboard</h1>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+
+    <main class="dashboard-main">
+        <section class="info-cards-container">
+            <div class="info-card">
+                <h2>📍 Your Location</h2>
+                <p id="location">Fetching location...</p>
+            </div>
+
+            <div class="info-card camera-card">
+                <h2>🎥 Live Feed</h2>
+                <video id="camera-feed" autoplay class="camera-feed"></video>
+                <p id="camera-status" class="status-message"></p>
+            </div>
+        </section>
+
+        <section class="candidate-details-section">
+            <h2>👤 Candidate Details</h2>
+            <div class="table-container">
+                <table id="candidateTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>HTML Score</th>
+                            <th>CSS Score</th>
+                            <th>JavaScript Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="candidate-table-body">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="elite-dashboard.js"></script> </body>
+</html>
